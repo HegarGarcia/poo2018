@@ -1,0 +1,1 @@
+let cuadrado = x => x * x;

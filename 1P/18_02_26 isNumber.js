@@ -1,0 +1,1 @@
+let isNumber = x => typeof x === 'number';

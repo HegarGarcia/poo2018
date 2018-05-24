@@ -1,0 +1,1 @@
+let cubo = x => x * x * x;
