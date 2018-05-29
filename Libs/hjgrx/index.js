@@ -7,6 +7,7 @@ import { ConvertionRoman } from "./RomanoConverter/Romano.module.js";
 import { Fraction } from "./Fraction/Fraction.module.js";
 
 import * as Arithmetic from "./Arithmetic/arithmetic.module.js"
+import * as Text from "./Text/Text.module.js"
 
 const Module = Object.freeze({
     Autor: "HJGR",
@@ -19,7 +20,7 @@ const Module = Object.freeze({
     discrete: {},
     math: {},
     geometry: {},
-    text: {},
+    Text,
     Cajero,
     ConvertionLetter,
     ConvertionRoman,
