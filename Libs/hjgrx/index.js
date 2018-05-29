@@ -1,30 +1,30 @@
 import {
     Cajero
-} from "./Cajero.module.js";
+} from "./Cajero/Cajero.module.js";
 
 import {
     ConvertionLetter
-} from "./Letra.module.js";
+} from "./LetraConvertion/Letra.module.js";
 
 import {
     ConvertionRoman
-} from "./Romano.module.js";
+} from "./RomanoConvertion/Romano.module.js";
 
 import {
     Fraction
 } from "./Fraction/Fraction.module.js";
 
-import {
-    a
-} from "./Fraction/index.js";
+import * as Arithmetic from "./Arithmetic/arithmetic.module.js"
 
-export const HJGR = (function () {
+const HJGR = (function () {
     return ({
         autor: "HJGR",
         version: "0.1",
         number: {},
+
         Fraction,
-        arithmetic: {},
+        Arithmetic,
+
         discrete: {},
         math: {},
         geometry: {},
@@ -45,3 +45,5 @@ export const HJGR = (function () {
         },
     });
 })();
+
+window["a"] = HJGR;
