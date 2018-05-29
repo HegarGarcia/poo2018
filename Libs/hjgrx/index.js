@@ -6,14 +6,17 @@ import { ConvertionRoman } from "./RomanoConverter/Romano.module.js";
 
 import { Fraction } from "./Fraction/Fraction.module.js";
 
+import * as Arithmetic from "./Arithmetic/arithmetic.module.js"
 
-export const HJGR = (function () {
+const HJGR = (function () {
     return ({
         autor: "HJGR",
         version: "0.1",
         number: {},
+
         Fraction,
-        arithmetic: {},
+        Arithmetic,
+
         discrete: {},
         math: {},
         geometry: {},
@@ -35,3 +38,5 @@ export const HJGR = (function () {
         },
     });
 })();
+
+window["a"] = HJGR;
