@@ -8,35 +8,33 @@ import { Fraction } from "./Fraction/Fraction.module.js";
 
 import * as Arithmetic from "./Arithmetic/arithmetic.module.js"
 
-const HJGR = (function () {
-    return ({
-        autor: "HJGR",
-        version: "0.1",
-        number: {},
+const Module = Object.freeze({
+    Autor: "HJGR",
+    version: "0.1",
+    number: {},
 
-        Fraction,
-        Arithmetic,
+    Fraction,
+    Arithmetic,
 
-        discrete: {},
-        math: {},
-        geometry: {},
-        text: {},
-        Cajero,
-        ConvertionLetter,
-        ConvertionRoman,
+    discrete: {},
+    math: {},
+    geometry: {},
+    text: {},
+    Cajero,
+    ConvertionLetter,
+    ConvertionRoman,
 
-        shannon: {},
-        som: {},
-        date: {},
-        time: {},
-        error: {},
-        scrabble: {
-            model: {},
-            view: {},
-            controller: {},
-            error: {}
-        },
-    });
-})();
+    shannon: {},
+    som: {},
+    date: {},
+    time: {},
+    error: {},
+    scrabble: {
+        model: {},
+        view: {},
+        controller: {},
+        error: {}
+    }
+});
 
-window["a"] = HJGR;
+Object.assign(window, { Module });
