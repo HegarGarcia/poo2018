@@ -1,22 +1,11 @@
-import {
-    Cajero
-} from "./Cajero.module.js";
+import { Cajero } from "./Cajero/Cajero.module.js";
 
-import {
-    ConvertionLetter
-} from "./Letra.module.js";
+import { ConvertionLetter } from "./LetrasConverter/Letra.module.js";
 
-import {
-    ConvertionRoman
-} from "./Romano.module.js";
+import { ConvertionRoman } from "./RomanoConverter/Romano.module.js";
 
-import {
-    Fraction
-} from "./Fraction/Fraction.module.js";
+import { Fraction } from "./Fraction/Fraction.module.js";
 
-import {
-    a
-} from "./Fraction/index.js";
 
 export const HJGR = (function () {
     return ({
@@ -32,6 +21,7 @@ export const HJGR = (function () {
         Cajero,
         ConvertionLetter,
         ConvertionRoman,
+
         shannon: {},
         som: {},
         date: {},
