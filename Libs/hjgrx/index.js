@@ -6,14 +6,15 @@ import { ConvertionRoman } from "./RomanoConverter/Romano.module.js";
 
 import { Fraction } from "./Fraction/Fraction.module.js";
 
-import * as Arithmetic from "./Arithmetic/arithmetic.module.js"
-import * as Text from "./Text/Text.module.js"
+import * as Arithmetic from "./Arithmetic/arithmetic.module.js";
+import * as Text from "./Text/Text.module.js";
+import * as NumberModule from "./Number/Number.module.js";
 
 const Module = Object.freeze({
     Autor: "HJGR",
     version: "0.1",
-    number: {},
 
+    NumberModule,
     Fraction,
     Arithmetic,
 
