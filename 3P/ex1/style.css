@@ -1,0 +1,22 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center;
+}
+
+div#main {
+    margin: 0 auto;
+    max-width: 20%;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-gap: 0.5em;
+}
