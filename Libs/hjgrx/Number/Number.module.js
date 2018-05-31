@@ -1,17 +1,30 @@
-export function isNumber(num) {
-    return !isNaN(num);
-}
+export class MyNumber extends Number {
+    static get[Symbol.species]() {
+        return Number;
+    }
 
-export function isPositive(num) {
-    validate();
-    return num >= 0;
-}
+    isNumber() {
+        return !isNaN(this);
+    }
 
-export function isNegative(num) {
-    validate();
-    return num < 0;
-}
+    isPositive() {
+        this.validate();
+        return this >= 0;
+    }
 
-function validate(num) {
-    if (isNaN(num)) throw new Error("Valor no válido");
+    isNegative() {
+        this.validate();
+        return this <= 0;
+    }
+
+    divisibleBy(num) {
+        if (isNaN(num)) throw new Error("Valor no válido");
+        this.validate();
+
+        return this % num === 0;
+    }
+
+    validate() {
+        if (isNaN(this)) throw new Error("Valor no válido");
+    }
 }

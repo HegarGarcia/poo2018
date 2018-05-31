@@ -23,7 +23,7 @@ export class Fraction {
         if (!b)
             return Math.abs(a);
 
-        return this.euclides(b, a % b);
+        return this.euclides(b, a % b)
     }
 
     static checkInstance(frac) {
@@ -31,6 +31,10 @@ export class Fraction {
             throw 'Argumento no es Fracción';
 
         return true;
+    }
+
+    static isFraction(frac) {
+        return frac instanceof Fraction;
     }
 
     print() {

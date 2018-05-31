@@ -1,14 +1,24 @@
-import { Cajero } from "./Cajero/Cajero.module.js";
+import {
+    Cajero
+} from "./Cajero/Cajero.module.js";
 
-import { ConvertionLetter } from "./LetrasConverter/Letra.module.js";
+import {
+    ConvertionLetter
+} from "./LetrasConverter/Letra.module.js";
 
-import { ConvertionRoman } from "./RomanoConverter/Romano.module.js";
+import {
+    ConvertionRoman
+} from "./RomanoConverter/Romano.module.js";
 
-import { Fraction } from "./Fraction/Fraction.module.js";
+import {
+    Fraction
+} from "./Fraction/Fraction.module.js";
 
 import * as Arithmetic from "./Arithmetic/arithmetic.module.js";
 import * as Text from "./Text/Text.module.js";
 import * as NumberModule from "./Number/Number.module.js";
+import * as Discrete from "./Discrete/Discrete.module.js";
+import * as MathModule from "./Math/Math.module.js";
 
 const Module = Object.freeze({
     Autor: "HJGR",
@@ -18,8 +28,8 @@ const Module = Object.freeze({
     Fraction,
     Arithmetic,
 
-    discrete: {},
-    math: {},
+    Discrete,
+    Math,
     geometry: {},
     Text,
     Cajero,
@@ -39,4 +49,6 @@ const Module = Object.freeze({
     }
 });
 
-Object.assign(window, { Module });
+Object.assign(window, {
+    Module
+});
