@@ -1,4 +1,4 @@
-export class Fraction {
+export default class Fraction {
     constructor(numerador, denominador) {
         numerador = Number(numerador);
         denominador = Number(denominador);
