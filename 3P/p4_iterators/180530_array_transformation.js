@@ -7,30 +7,29 @@ let doubleFL = function (list) {
     }
 
     return result;
-}
+};
 
 // Double using ForEach
 let doubleFE = function (list) {
     let result = [];
 
-    list.forEach((number) => result.push(number * 2));
+    list.forEach(number => result.push(number * 2));
 
     return result;
-}
+};
 
 // Double using Map
-
 let doubleWM = function (list) {
     return list.map(function (num) {
         return num * 2;
     });
-}
+};
 
 let doubleWMA = function (list) {
-    return list.map((num) => num * 2);
-}
+    return list.map(num => num * 2);
+};
 
-let doubleWMAA = (list) => list.map((num) => num * 2);
+let doubleWMAA = list => list.map(num => num * 2);
 
 let a = [5, 4, 3, 2, 1];
 
