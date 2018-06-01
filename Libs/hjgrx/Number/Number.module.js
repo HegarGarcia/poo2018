@@ -4,7 +4,7 @@ export class MyNumber extends Number {
     }
 
     isNumber() {
-        return !isNaN(this);
+        return typeof this === "number";
     }
 
     isPositive() {
@@ -34,7 +34,11 @@ export class MyNumber extends Number {
         return this % num === 0;
     }
 
-    trichotomy() {}
+    trichotomy() {
+        a > b = -1
+        a < b = 1;
+        a = b = 0;
+    }
 
     validate() {
         if (isNaN(this)) throw new Error("Valor no válido");
