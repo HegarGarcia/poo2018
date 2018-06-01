@@ -7,7 +7,7 @@ import * as Discrete from "./Discrete/Discrete.module.js";
 import * as MathModule from "./Math/Math.module.js";
 import * as Text from "./Text/Text.module.js";
 
-const Module = Object.freeze({
+const Module = {
     Autor: "HJGR",
     version: "0.1",
 
@@ -25,24 +25,16 @@ const Module = Object.freeze({
     // Vector,
     // Matrix,
     // Robot,
-    Cajero,
-    ConvertionRoman,
-    ConvertionLetter,
+    // Cajero,
+    // ConvertionRoman,
+    // ConvertionLetter,
 
-    geometry: {},
+    Geometry: {},
 
-    shannon: {},
-    som: {},
-    date: {},
-    time: {},
-    error: {},
-    scrabble: {
-        model: {},
-        view: {},
-        controller: {},
-        error: {}
-    }
-});
+    Shannon: {},
+    Som: {},
+    Error: {}
+};
 
 Object.assign(window, {
     Module
