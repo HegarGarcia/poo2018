@@ -35,9 +35,9 @@ export class MyNumber extends Number {
     }
 
     trichotomy() {
-        a > b = -1
-        a < b = 1;
-        a = b = 0;
+        // a > b = -1
+        // a < b = 1;
+        // a = b = 0;
     }
 
     validate() {
