@@ -4,11 +4,15 @@ import Fraction from "./Fraction/Fraction.module.js";
 import * as Arithmetic from "./Arithmetic/arithmetic.module.js";
 
 import * as Util from "./Util/Util.module.js";
+import { MyDate } from "./Date/Date.module.js";
 import * as Discrete from "./Discrete/Discrete.module.js";
 import * as MathModule from "./Math/Math.module.js";
 import * as Text from "./Text/Text.module.js";
 
-const Module = {
+import { Vector } from "./Vector/Vector.module.js";
+import { Matrix } from "./Matrix/Matrix.module.js";
+
+const hjgr = {
     Autor: "HJGR",
     version: "0.1",
 
@@ -18,25 +22,19 @@ const Module = {
     Arithmetic,
 
     Util,
-    // DateModule,
+    MyDate,
     Discrete,
-    Math,
+    MathModule,
     Text,
     // Series,
-    // Vector,
-    // Matrix,
+    Vector,
+    Matrix,
     // Robot,
     // Cajero,
     // ConvertionRoman,
     // ConvertionLetter,
 
-    Geometry: {},
-
-    Shannon: {},
-    Som: {},
-    Error: {}
+    Geometry: {}
 };
 
-Object.assign(window, {
-    Module
-});
+Object.assign(window, { hjgr });
