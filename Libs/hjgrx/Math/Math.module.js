@@ -1,4 +1,4 @@
-import { sum } from "./../Arithmetic/Arithmetic.module.js";
+import { sum as sumArithmetic } from "./../Arithmetic/Arithmetic.module.js";
 
 export const PI = 3.1416;
 export const radian = 57.29;
@@ -10,7 +10,7 @@ export function abs(num) {
 }
 
 export function sum(val) {
-    return sum(val);
+    return sumArithmetic(val);
 }
 
 export function square(val) {
