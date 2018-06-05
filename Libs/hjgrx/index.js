@@ -13,6 +13,8 @@ import Vector from "./Vector/Vector.module.js";
 import Matrix from "./Matrix/Matrix.module.js";
 import Robot from "./Robot/Robot.module.js";
 
+import Geometry from "./Geometry/Geometry.module.js";
+
 const hjgr = {
     Autor: "HJGR",
     version: "0.1",
@@ -35,7 +37,7 @@ const hjgr = {
     // ConvertionRoman,
     // ConvertionLetter,
 
-    Geometry: {}
+    Geometry
 };
 
 Object.assign(window, { hjgr });
