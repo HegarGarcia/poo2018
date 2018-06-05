@@ -1,5 +1,5 @@
 export class MyNumber extends Number {
-    static get[Symbol.species]() {
+    static get [Symbol.species]() {
         return Number;
     }
 
@@ -34,13 +34,14 @@ export class MyNumber extends Number {
         return this % num === 0;
     }
 
-    trichotomy() {
-        // a > b = -1
-        // a < b = 1;
-        // a = b = 0;
-    }
-
     validate() {
         if (isNaN(this)) throw new Error("Valor no válido");
     }
 }
+
+(function() {
+    Number.trichotomy = function(a, b) {
+        if (isNaN(a) && isNaN(b)) throw new Error("Valores no son números");
+        return a === b ? 0 : a > b ? 1 : -1;
+    };
+})();
