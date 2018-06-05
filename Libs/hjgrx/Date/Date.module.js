@@ -1,4 +1,4 @@
-export class MyDate extends Date {
+export default class MyDate extends Date {
     static get [Symbol.species]() {
         return Number;
     }

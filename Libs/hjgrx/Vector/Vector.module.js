@@ -1,4 +1,4 @@
-export class Vector {
+export default class Vector {
     constructor(props = 0) {
         if (typeof props !== "number" && !(props instanceof Array))
             throw new Error("Argumento no es válido");

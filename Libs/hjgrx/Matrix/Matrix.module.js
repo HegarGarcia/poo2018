@@ -1,4 +1,4 @@
-export class Matrix {
+export default class Matrix {
     constructor(rows = 1, cols = 1) {
         if (typeof rows !== "number" && typeof cols !== "number")
             throw new Error("Error en los argumentos");
