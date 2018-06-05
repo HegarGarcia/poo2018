@@ -12,7 +12,9 @@ export class MyDate extends Date {
         return this.getMonth() + 1;
     }
 
-    week() {}
+    week() {
+        return this.getDay() !== 0 ? this.getDay() + 1 : 7;
+    }
 
     season() {
         let month = this.getMonth() + 1;
@@ -46,6 +48,37 @@ export class MyDate extends Date {
 
     isLeap() {
         let year = this.getFullYear();
-        return year % 4 !== 0 ? false : year % 100 !== 0 ? true : year % 400 === 0 ? true : false;
+
+        return year % 4 !== 0 ?
+            false :
+            year % 100 !== 0 ?
+            true :
+            year % 400 === 0 ?
+            true :
+            false;
     }
 }
+
+(function () {
+    Date.weekDays = new Map([
+        [1, "lunes"],
+        [2, "martes"],
+        [3, "miercoles"],
+        [4, "jueves"],
+        [5, "viernes"],
+        [6, "sabado"],
+        [7, "domingo"],
+        ["lunes", 1],
+        ["martes", 2],
+        ["miercoles", 3],
+        ["jueves", 4],
+        ["viernes", 5],
+        ["sabado", 6],
+        ["domingo", 7],
+    ]);
+
+    Date.weekDay = function (weekDay = 1) {
+        weekDay = typeof weekDay === "string" ? weekDay.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "") : weekDay.toFixed();
+        return this.weekDays.get(weekDay);
+    }
+})();
