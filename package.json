@@ -1,0 +1,12 @@
+{
+    "name": "poo_ejercicios",
+    "version": "0.0.1",
+    "main": "index.js",
+    "repository": "https://github.com/HegarGarcia/POO_Ejercicios.git",
+    "author": "Hegar Garcia <hegargarcia@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "test": "ws | start http://localhost:8000/Test"
+    }
+}
