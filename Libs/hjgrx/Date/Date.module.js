@@ -1,5 +1,5 @@
 export class MyDate extends Date {
-    static get[Symbol.species]() {
+    static get [Symbol.species]() {
         return Number;
     }
 
@@ -49,17 +49,17 @@ export class MyDate extends Date {
     isLeap() {
         let year = this.getFullYear();
 
-        return year % 4 !== 0 ?
-            false :
-            year % 100 !== 0 ?
-            true :
-            year % 400 === 0 ?
-            true :
-            false;
+        return year % 4 !== 0
+            ? false
+            : year % 100 !== 0
+                ? true
+                : year % 400 === 0
+                    ? true
+                    : false;
     }
 }
 
-(function () {
+(function() {
     Date.weekDays = new Map([
         [1, "lunes"],
         [2, "martes"],
@@ -74,11 +74,19 @@ export class MyDate extends Date {
         ["jueves", 4],
         ["viernes", 5],
         ["sabado", 6],
-        ["domingo", 7],
+        ["domingo", 7]
     ]);
 
-    Date.weekDay = function (weekDay = 1) {
-        weekDay = typeof weekDay === "string" ? weekDay.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "") : weekDay.toFixed();
+    Date.weekDay = function(weekDay = 1) {
+        if (typeof weekDay === "string") {
+            weekDay = weekDay
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        } else {
+            weekDay = weekDay.toFixed();
+        }
+
         return this.weekDays.get(weekDay);
-    }
+    };
 })();
