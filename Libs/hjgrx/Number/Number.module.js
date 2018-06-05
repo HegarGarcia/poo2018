@@ -1,10 +1,6 @@
-export class MyNumber extends Number {
+export default class MyNumber extends Number {
     static get [Symbol.species]() {
         return Number;
-    }
-
-    isNumber() {
-        return typeof this === "number";
     }
 
     isPositive() {
@@ -28,9 +24,7 @@ export class MyNumber extends Number {
     }
 
     divisibleBy(num) {
-        if (isNaN(num)) throw new Error("Valor no válido");
         this.validate();
-
         return this % num === 0;
     }
 
@@ -43,5 +37,9 @@ export class MyNumber extends Number {
     Number.trichotomy = function(a, b) {
         if (isNaN(a) && isNaN(b)) throw new Error("Valores no son números");
         return a === b ? 0 : a > b ? 1 : -1;
+    };
+
+    Number.isNumber = function(num) {
+        return typeof num === "number";
     };
 })();
