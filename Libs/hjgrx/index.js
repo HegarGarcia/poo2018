@@ -11,6 +11,7 @@ import * as Text from "./Text/Text.module.js";
 
 import { Vector } from "./Vector/Vector.module.js";
 import { Matrix } from "./Matrix/Matrix.module.js";
+import { Robot } from "./Robot/Robot.module.js";
 
 const hjgr = {
     Autor: "HJGR",
@@ -29,7 +30,7 @@ const hjgr = {
     // Series,
     Vector,
     Matrix,
-    // Robot,
+    Robot,
     // Cajero,
     // ConvertionRoman,
     // ConvertionLetter,
