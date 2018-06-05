@@ -1,6 +1,6 @@
 import * as Arithmetic from "/Libs/hjgrx/Arithmetic/Arithmetic.module.js";
 
-describe("Arithmetic", function() {
+describe("Arithmetic Module", function() {
     it("Should return 15 when adding [1, 2, 3, 4, 5]", function() {
         chai.expect(Arithmetic.sum(1, 2, 3, 4, 5)).to.equal(15);
     });
