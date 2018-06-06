@@ -17,7 +17,7 @@ import Geometry from "./Geometry/Geometry.module.js";
 
 const hjgr = {
     Autor: "HJGR",
-    version: "0.1",
+    version: "0.0.1",
 
     NumberModule,
 
