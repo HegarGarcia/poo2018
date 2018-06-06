@@ -9,41 +9,18 @@ export default class MyDate extends Date {
     }
 
     month() {
-        return this.getMonth() + 1;
+        let month = this.getMonth() + 1;
+        return this.months.get(month);
     }
 
     week() {
-        return this.getDay() !== 0 ? this.getDay() + 1 : 7;
+        let day = this.getDay() !== 0 ? this.getDay() + 1 : 7;
+        return this.weekDays.get(day);
     }
 
     season() {
         let month = this.getMonth() + 1;
-        let season;
-
-        switch (month) {
-            case 3:
-            case 4:
-            case 5:
-                season = "Spring";
-                break;
-            case 6:
-            case 7:
-            case 8:
-                season = "Summer";
-                break;
-            case 9:
-            case 10:
-            case 11:
-                season = "Autumn";
-                break;
-            case 12:
-            case 1:
-            case 2:
-                season = "Winter";
-                break;
-        }
-
-        return season;
+        return this.seasons.get(month);
     }
 
     isLeap() {
@@ -77,6 +54,60 @@ export default class MyDate extends Date {
         ["domingo", 7]
     ]);
 
+    Date.months = new Map([
+        [1, "enero"],
+        [2, "febrero"],
+        [3, "marzo"],
+        [4, "abril"],
+        [5, "mayo"],
+        [6, "junio"],
+        [7, "julio"],
+        [8, "agosto"],
+        [9, "septiembre"],
+        [10, "octubre"],
+        [11, "noviembre"],
+        [12, "diciembre"],
+        ["enero", 1],
+        ["febrero", 2],
+        ["marzo", 3],
+        ["abril", 4],
+        ["mayo", 5],
+        ["junio", 6],
+        ["julio", 7],
+        ["agosto", 8],
+        ["septiembre", 9],
+        ["octubre", 10],
+        ["noviembre", 11],
+        ["diciembre", 12]
+    ]);
+
+    Date.seasons = new Map([
+        [1, "invierno"],
+        [2, "invierno"],
+        [3, "primavera"],
+        [4, "primavera"],
+        [5, "primavera"],
+        [6, "verano"],
+        [7, "verano"],
+        [8, "verano"],
+        [9, "otoño"],
+        [10, "otoño"],
+        [11, "otoño"],
+        [12, "invierno"],
+        ["invierno", 1],
+        ["invierno", 2],
+        ["primavera", 3],
+        ["primavera", 4],
+        ["primavera", 5],
+        ["verano", 6],
+        ["verano", 7],
+        ["verano", 8],
+        ["otoño", 9],
+        ["otoño", 10],
+        ["otoño", 11],
+        ["invierno", 12]
+    ]);
+
     Date.weekDay = function(weekDay = 1) {
         if (typeof weekDay === "string") {
             weekDay = weekDay
@@ -84,9 +115,35 @@ export default class MyDate extends Date {
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "");
         } else {
-            weekDay = weekDay.toFixed();
+            weekDay = Number(weekDay.toFixed());
         }
 
         return this.weekDays.get(weekDay);
+    };
+
+    Date.month = function(month = 1) {
+        if (typeof month === "string") {
+            month = month
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        } else {
+            month = Number(month.toFixed());
+        }
+
+        return this.months.get(month);
+    };
+
+    Date.season = function(season = 1) {
+        if (typeof season === "string") {
+            season = season
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        } else {
+            season = Number(season.toFixed());
+        }
+
+        return this.seasons.get(season);
     };
 })();
