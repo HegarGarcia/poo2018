@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <textarea class="text" placeholder="Your text here..." style="width: 100%; height: 200px;"></textarea>
+    <button class="btn">Get Stats</button>
+    <p class="result">Results here...</p>
+
+    <script defer type="module">
+        import { hjgr } from "./../../Libs/hjgrx/index.js"; Object.assign(window, {hjgr}); const textarea = document.querySelector(".text");
+        const btn = document.querySelector(".btn"); const results = document.querySelector(".result"); const textSplitter
+        = new hjgr.Text(".text"); btn.addEventListener("click", getStats); function getStats(e) { if (textSplitter.isEmpty())
+        { results.textContent = "Type in some text..."; } else { results.textContent = `${textSplitter.splitWords().length}`;
+        } }
+    </script>
+
+    <script src="./fibonacci.js"></script>
+
+</body>
+
+</html>
