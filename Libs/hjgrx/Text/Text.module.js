@@ -1,32 +1,34 @@
-export class TextSplitter {
+export default class TextSplitter {
     constructor(selector) {
         this.elem = document.querySelector(selector);
-        this.txt = elem.value;
         if (this.elem === null) throw new Error("Elemento no encontrado");
     }
 
     splitWords() {
-        this.validate();
-        return this.split(this.txt, /\r*\n|\r|\s|[.,]/g);
+        return this.split(/\r*\n|\r|\s|[.,]/g);
     }
 
     splitSentences(txt) {
-        this.validate();
-        return this.split(this.txt, /[.?!,;<>¿¿]\s*/g);
+        return this.split(/[.?!,;<>¿¿]\s*/g);
     }
 
     splitParagraph(txt) {
-        this.validate();
-        return this.split(this.txt, /\n+|\r+/g);
+        return this.split(/\n+|\r+/g);
     }
 
     split(regexp) {
-        this.validate();
-        return this.txt.split(regexp).filter(val => val);
+        let txt = this.validate();
+        return txt.split(regexp).filter((val) => val);
+    }
+
+    isEmpty() {
+        let txt = this.validate();
+        return txt === "";
     }
 
     validate() {
-        this.txt = elem.value;
-        if (typeof this.txt !== "string") throw new Error("Valores no válidos");
-    }
+        const txt = this.elem.value;
+        if (typeof txt !== "string") throw new Error("Valores no válidos");
+        return txt;
+    };
 }
