@@ -9,10 +9,11 @@ import * as Discrete from "./Discrete/Discrete.module.js";
 import * as MathModule from "./Math/Math.module.js";
 import Text from "./Text/Text.module.js";
 import * as Series from "./Number/Number.module.js";
-
 import Vector from "./Vector/Vector.module.js";
 import Matrix from "./Matrix/Matrix.module.js";
 import Robot from "./Robot/Robot.module.js";
+
+import NumberToLetter from "./Converters/NumberToLetter.module.js";
 
 import Geometry from "./Geometry/Geometry.module.js";
 
@@ -33,9 +34,9 @@ export const hjgr = {
     Series,
     Vector,
     Matrix,
-    Robot
+    Robot,
     // Cajero,
-    // ConvertionRoman,
+    NumberToLetter
     // ConvertionLetter,
 
     // Geometry
