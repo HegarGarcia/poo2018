@@ -8,6 +8,7 @@ import MyDate from "./Date/Date.module.js";
 import * as Discrete from "./Discrete/Discrete.module.js";
 import * as MathModule from "./Math/Math.module.js";
 import Text from "./Text/Text.module.js";
+import * as Series from "./Number/Number.module.js";
 
 import Vector from "./Vector/Vector.module.js";
 import Matrix from "./Matrix/Matrix.module.js";
@@ -29,15 +30,15 @@ export const hjgr = {
     Discrete,
     MathModule,
     Text,
-    // Series,
+    Series,
     Vector,
     Matrix,
-    Robot,
+    Robot
     // Cajero,
     // ConvertionRoman,
     // ConvertionLetter,
 
-    Geometry
+    // Geometry
 };
 
 Object.assign(window, {
