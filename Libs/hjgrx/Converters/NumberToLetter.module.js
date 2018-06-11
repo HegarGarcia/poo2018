@@ -132,7 +132,7 @@ function getCentenas(num) {
         resto = num - centenas * 100;
 
     if (resto === 0) {
-        return "cien";
+        return centenas === 1 ? "cien" : CENTENAS.get(centenas);
     }
 
     return `${CENTENAS.get(centenas)} ${getDecenas(resto)}`;
@@ -141,7 +141,10 @@ function getCentenas(num) {
 function getDecenas(num) {
     let decenas = Math.floor(num / 10),
         resto = num - decenas * 10,
+        decimales = resto % 1,
         result;
+
+    resto -= decimales;
 
     if (num <= 29) {
         result = UNIDADES.get(num);
@@ -149,6 +152,11 @@ function getDecenas(num) {
         result = `${DECENAS.get(decenas)} y ${UNIDADES.get(resto)}`;
     } else {
         result = `${DECENAS.get(decenas)}`;
+    }
+
+    if (decimales > 0) {
+        decimales = decimales.toFixed(2) * 10;
+        result += ` con ${getDecenas(decimales)} centesímos`;
     }
 
     return result;

@@ -1,4 +1,4 @@
-export function NumberToRoman(num) {
+export default function NumberToRoman(num) {
     const ROMAN = new Map([
         ["M", 1000],
         ["CM", 900],

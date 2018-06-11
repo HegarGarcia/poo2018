@@ -12,7 +12,7 @@ import * as Series from "./Number/Number.module.js";
 import Vector from "./Vector/Vector.module.js";
 import Matrix from "./Matrix/Matrix.module.js";
 import Robot from "./Robot/Robot.module.js";
-
+import Cashier from "./Cashier/Cashier.module.js";
 import NumberToLetter from "./Converters/NumberToLetter.module.js";
 import NumberToRoman from "./Converters/NumberToRoman.module.js";
 
@@ -36,7 +36,7 @@ export const hjgr = {
     Vector,
     Matrix,
     Robot,
-    // Cajero,
+    Cashier,
     NumberToLetter,
     NumberToRoman,
 
