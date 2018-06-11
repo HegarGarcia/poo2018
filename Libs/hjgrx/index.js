@@ -36,10 +36,10 @@ export const hjgr = {
     Matrix,
     Robot,
     // Cajero,
-    NumberToLetter
+    NumberToLetter,
     // ConvertionLetter,
 
-    // Geometry
+    Geometry
 };
 
 Object.assign(window, {

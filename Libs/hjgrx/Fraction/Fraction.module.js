@@ -3,8 +3,11 @@ export default class Fraction {
         numerador = Number(numerador);
         denominador = Number(denominador);
 
-        if (!this.constructor.isValid(numerador) || !this.constructor.isValid(denominador))
-            throw 'Datos inválidos';
+        if (
+            !this.constructor.isValid(numerador) ||
+            !this.constructor.isValid(denominador)
+        )
+            throw "Datos inválidos";
 
         let gcd = this.constructor.euclides(numerador, denominador);
 
@@ -13,32 +16,39 @@ export default class Fraction {
     }
 
     static isValid(num) {
-        if (!isNaN(num) && Number.isInteger(num))
-            return true;
+        if (!isNaN(num) && Number.isInteger(num)) return true;
 
         return false;
     }
 
     static euclides(a, b) {
-        if (!b)
-            return Math.abs(a);
+        if (!b) return Math.abs(a);
 
-        return this.euclides(b, a % b)
-    }
-
-    static checkInstance(frac) {
-        if (!(frac instanceof Fraction))
-            throw 'Argumento no es Fracción';
-
-        return true;
+        return this.euclides(b, a % b);
     }
 
     static isFraction(frac) {
         return frac instanceof Fraction;
     }
 
+    equals(fraction) {
+        if (!(fraction instanceof Fraction)) throw new Error("Valor no válido");
+        return (
+            this._numerador === fraction._numerador &&
+            this._denominador === fraction._denominador
+        );
+    }
+
+    toNumber() {
+        return Number(this._numerador / this._denominador);
+    }
+
     print() {
-        return this._numerador == 1 && this._denominador == 1 ? 1 : this._numerador == 0 && this._denominador == 0 ? 0 : `${this._numerador}/${this._denominador}`;
+        return this._numerador == 1 && this._denominador == 1
+            ? 1
+            : this._numerador == 0 && this._denominador == 0
+                ? 0
+                : `${this._numerador}/${this._denominador}`;
     }
 
     add(frac) {
@@ -50,7 +60,9 @@ export default class Fraction {
         if (this._denominador === frac._denominador)
             numerador += frac._numerador;
         else {
-            numerador = (this._numerador * frac._denominador) + (frac._numerador * this._denominador);
+            numerador =
+                this._numerador * frac._denominador +
+                frac._numerador * this._denominador;
             denominador *= frac._denominador;
         }
 
@@ -66,7 +78,9 @@ export default class Fraction {
         if (this._denominador === frac._denominador)
             numerador -= frac._numerador;
         else {
-            numerador = (this._numerador * frac._denominador) - (frac._numerador * this._denominador);
+            numerador =
+                this._numerador * frac._denominador -
+                frac._numerador * this._denominador;
             denominador *= frac._denominador;
         }
 
