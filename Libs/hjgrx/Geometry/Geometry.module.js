@@ -6,12 +6,4 @@ import Circle from "./Circle.class.js";
 import Square from "./Square.class.js";
 import Trapezoide from "./Trapezoide.class.js";
 
-export default {
-    Point,
-    Line,
-    Rectangle,
-    Triangle,
-    Circle,
-    Square,
-    Trapezoide
-};
+export { Point, Line, Rectangle, Triangle, Circle, Square, Trapezoide };

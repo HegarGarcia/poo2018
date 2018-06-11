@@ -8,6 +8,6 @@
     "private": true,
     "scripts": {
         "serve": "ws | start http://localhost:8000/",
-        "test": "ws | start http://localhost:8000/Test"
+        "test": "ws -p 8080 | start http://localhost:8080/Test"
     }
 }

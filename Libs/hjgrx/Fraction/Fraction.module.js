@@ -1,5 +1,5 @@
 export default class Fraction {
-    constructor(numerador, denominador) {
+    constructor(numerador = 1, denominador = 1) {
         numerador = Number(numerador);
         denominador = Number(denominador);
 
@@ -43,16 +43,8 @@ export default class Fraction {
         return Number(this._numerador / this._denominador);
     }
 
-    print() {
-        return this._numerador == 1 && this._denominador == 1
-            ? 1
-            : this._numerador == 0 && this._denominador == 0
-                ? 0
-                : `${this._numerador}/${this._denominador}`;
-    }
-
     add(frac) {
-        this.constructor.checkInstance(frac);
+        this.constructor.isFraction(frac);
 
         let numerador = this._numerador,
             denominador = this._denominador;
@@ -70,7 +62,7 @@ export default class Fraction {
     }
 
     subtract(frac) {
-        this.constructor.checkInstance(frac);
+        this.constructor.isFraction(frac);
 
         let numerador = this._numerador,
             denominador = this._denominador;
@@ -88,7 +80,7 @@ export default class Fraction {
     }
 
     multiply(frac) {
-        this.constructor.checkInstance(frac);
+        this.constructor.isFraction(frac);
 
         let numerador = this._numerador * frac._numerador,
             denominador = this._denominador * frac._denominador;
@@ -97,7 +89,7 @@ export default class Fraction {
     }
 
     divide(frac) {
-        this.constructor.checkInstance(frac);
+        this.constructor.isFraction(frac);
 
         let numerador = this._numerador * frac._denominador,
             denominador = this._denominador * frac._numerador;

@@ -20,7 +20,7 @@ export default class Triangle extends Shape {
     }
 
     clone() {
-        return new Triangle();
+        return new Triangle(this._pA, this._pB, this._pC);
     }
 
     area() {

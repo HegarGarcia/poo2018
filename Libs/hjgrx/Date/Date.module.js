@@ -5,22 +5,21 @@ export default class MyDate extends Date {
 
     constructor() {
         super(...arguments);
-        this.monthRelation = new Map();
     }
 
     month() {
         let month = this.getMonth() + 1;
-        return this.months.get(month);
+        return Date.months.get(month);
     }
 
     week() {
         let day = this.getDay() !== 0 ? this.getDay() + 1 : 7;
-        return this.weekDays.get(day);
+        return Date.weekDays.get(day);
     }
 
     season() {
         let month = this.getMonth() + 1;
-        return this.seasons.get(month);
+        return Date.seasons.get(month);
     }
 
     isLeap() {

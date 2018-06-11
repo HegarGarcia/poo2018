@@ -51,7 +51,7 @@ export default class Vector {
     }
 
     sumE(e) {
-        if (isNan(e)) throw new Error("Valor no es un número");
+        if (isNaN(e)) throw new Error("Valor no es un número");
         let arr = this.arr.map(val => val + e);
         return new Vector(arr);
     }
@@ -63,7 +63,7 @@ export default class Vector {
     }
 
     subsE(e) {
-        if (isNan(e)) throw new Error("Valor no es un número");
+        if (isNaN(e)) throw new Error("Valor no es un número");
         let arr = this.arr.map(val => val - e);
         return new Vector(arr);
     }
@@ -75,7 +75,7 @@ export default class Vector {
     }
 
     multE(e) {
-        if (isNan(e)) throw new Error("Valor no es un número");
+        if (isNaN(e)) throw new Error("Valor no es un número");
         let arr = this.arr.map(val => val * e);
         return new Vector(arr);
     }
@@ -87,7 +87,7 @@ export default class Vector {
     }
 
     divE(e) {
-        if (isNan(e)) throw new Error("Valor no es un número");
+        if (isNaN(e)) throw new Error("Valor no es un número");
         let arr = this.arr.map(val => val / e);
         return new Vector(arr);
     }
@@ -140,9 +140,12 @@ export default class Vector {
     }
 
     isSimilarVector(vector) {
-        if (!(vector instanceof Vector))
+        if (!(vector instanceof Vector)) {
             throw new Error("Argumento no es un vector");
-        else if (vector.length !== this.arr.length)
+        } else if (vector.length !== this.arr.length) {
             throw new Error(`La longitud no es ${this.arr.length}`);
+        }
+
+        return this.arr.every((val, i) => vector.arr[i] === val);
     }
 }

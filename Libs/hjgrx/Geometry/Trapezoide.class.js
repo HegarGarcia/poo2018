@@ -31,7 +31,7 @@ export default class Trapezoide extends Shape {
     }
 
     clone() {
-        return new Trapezoide(...this._points);
+        return new Trapezoide(...this._points, this._height);
     }
 
     area() {

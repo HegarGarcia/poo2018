@@ -8,17 +8,17 @@ export default class TextSplitter {
         return this.split(/\r*\n|\r|\s|[.,]/g);
     }
 
-    splitSentences(txt) {
+    splitSentences() {
         return this.split(/[.?!,;<>¿¿]\s*/g);
     }
 
-    splitParagraph(txt) {
+    splitParagraph() {
         return this.split(/\n+|\r+/g);
     }
 
     split(regexp) {
         let txt = this.validate();
-        return txt.split(regexp).filter((val) => val);
+        return txt.split(regexp).filter(val => val);
     }
 
     isEmpty() {
@@ -30,5 +30,5 @@ export default class TextSplitter {
         const txt = this.elem.value;
         if (typeof txt !== "string") throw new Error("Valores no válidos");
         return txt;
-    };
+    }
 }

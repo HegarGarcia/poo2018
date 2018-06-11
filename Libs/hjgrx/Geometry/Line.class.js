@@ -35,7 +35,7 @@ export default class Line extends Shape {
     }
 
     clone() {
-        return new Line();
+        return new Line(this._pA, this._pB);
     }
 
     static isLine() {

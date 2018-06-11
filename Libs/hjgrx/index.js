@@ -16,7 +16,7 @@ import Cashier from "./Cashier/Cashier.module.js";
 import NumberToLetter from "./Converters/NumberToLetter.module.js";
 import NumberToRoman from "./Converters/NumberToRoman.module.js";
 
-import Geometry from "./Geometry/Geometry.module.js";
+import * as Geometry from "./Geometry/Geometry.module.js";
 
 export const hjgr = {
     Autor: "HJGR",

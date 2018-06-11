@@ -1,22 +1,21 @@
 export function factorial(num) {
     validate(num);
-    let result;
+    let result = 1;
 
-    for (let i = number; i > 0; i--) {
+    for (let i = num; i > 0; i--) {
         result *= i;
     }
 
     return result;
 }
 
-export function permutation(n, k) {
-    validate(n, k);
-    if (n < k) throw new Error("Valores no válidos");
-    return factorial(n) / factorial(n - k);
+export function permutation(n, r) {
+    validate(n, r);
+    if (n < r) throw new Error("Valores no válidos");
+    return factorial(n) / factorial(n - r);
 }
 
-function validate(num) {
-    const args = Array.from(arguments);
-    const valid = args.every((val) => !isNaN(val));
+function validate() {
+    const valid = [...arguments].every(val => !isNaN(val));
     if (!valid) throw new Error("Valor(es) no válido(s)");
 }
