@@ -8,24 +8,37 @@ import {
     Triangle
 } from "./../../Libs/hjgrx/Geometry/Geometry.module.js";
 
-describe("Geometry Module", function() {
+describe("Geometry Module", function () {
     let pointA, pointB, pointC, pointD, lineA, lineB, triangle;
 
     before(() => {
-        pointA = new Point({ x: 0, y: 0 });
-        pointB = new Point({ x: 5, y: 5 });
-        pointC = new Point({ x: 3, y: 5 });
-        pointD = new Point({ x: 7, y: 0 });
+        pointA = new Point({
+            x: 0,
+            y: 0
+        });
+        pointB = new Point({
+            x: 5,
+            y: 5
+        });
+        pointC = new Point({
+            x: 3,
+            y: 5
+        });
+        pointD = new Point({
+            x: 7,
+            y: 0
+        });
         lineA = new Line(pointA, pointB);
         lineB = new Line(pointB, pointC);
+        triangle = new Triangle(pointA, pointB, pointC);
     });
 
-    describe("Point", function() {
-        it("Should return trichotomy", function() {
+    describe("Point", function () {
+        it("Should return trichotomy", function () {
             chai.expect();
         });
 
-        it("Should return a clone of the point", function() {
+        it("Should return a clone of the point", function () {
             chai.expect(pointA.clone()).to.deep.equal(pointA);
         });
 
@@ -40,7 +53,7 @@ describe("Geometry Module", function() {
         });
     });
 
-    describe("Line", function() {
+    describe("Line", function () {
         it("Should return if two lines are parallels", () => {
             chai.expect(lineA.isParallel(lineB)).to.equal(false);
         });
@@ -62,7 +75,7 @@ describe("Geometry Module", function() {
         });
     });
 
-    describe("Rectangle", function() {
+    describe("Rectangle", function () {
         let rectangle;
 
         before(() => (rectangle = new Rectangle({})));
@@ -84,7 +97,7 @@ describe("Geometry Module", function() {
         });
     });
 
-    describe("Square", function() {
+    describe("Square", function () {
         let square;
 
         before(() => (square = new Square(4)));
@@ -106,9 +119,7 @@ describe("Geometry Module", function() {
         });
     });
 
-    describe("Triangle", function() {
-        before(() => (triangle = new Triangle(pointA, pointB, pointC)));
-
+    describe("Triangle", function () {
         it("Should return the area", () => {
             chai.expect(triangle.area()).to.equal(5);
         });
@@ -126,7 +137,7 @@ describe("Geometry Module", function() {
         });
     });
 
-    describe("Trapezoide", function() {
+    describe("Trapezoide", function () {
         let trapezoide;
 
         before(() => {
@@ -150,7 +161,7 @@ describe("Geometry Module", function() {
         });
     });
 
-    describe("Circle", function() {
+    describe("Circle", function () {
         let circleA;
         let circleB;
 

@@ -33,3 +33,7 @@ export function randomAB(min = 0, max = 10) {
 export function randomN(max) {
     return Math.floor(Math.random() * (max + 1));
 }
+
+export function shuffle() {
+
+}

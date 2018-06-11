@@ -1,7 +1,7 @@
 import * as NumberModule from "./Number/Number.module.js";
 
 import Fraction from "./Fraction/Fraction.module.js";
-import * as Arithmetic from "./Arithmetic/arithmetic.module.js";
+import * as Arithmetic from "./Arithmetic/Arithmetic.module.js";
 
 import * as Util from "./Util/Util.module.js";
 import MyDate from "./Date/Date.module.js";
@@ -43,6 +43,9 @@ export const hjgr = {
     Geometry
 };
 
+let TextSplitter = new Text("#text_module");
+
 Object.assign(window, {
-    hjgr
+    hjgr,
+    TextSplitter
 });
