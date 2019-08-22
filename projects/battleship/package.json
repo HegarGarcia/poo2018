@@ -1,0 +1,27 @@
+{
+  "name": "battleship_poo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "ws",
+    "build": "tsc && ws"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HegarGarcia/BattleShip_POO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HegarGarcia/BattleShip_POO/issues"
+  },
+  "homepage": "https://github.com/HegarGarcia/BattleShip_POO#readme",
+  "private": true,
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.3",
+    "local-web-server": "^2.5.2"
+  }
+}
